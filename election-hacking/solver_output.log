@@ -1,0 +1,47 @@
+Solver command line: ['/usr/local/bin/glpsol', '--write', '/var/folders/q3/gbyp81td3_d5440ybkrvlqgm0000gn/T/tmphwi9efcu.glpk.raw', '--wglp', '/var/folders/q3/gbyp81td3_d5440ybkrvlqgm0000gn/T/tmp34lb0j1r.glpk.glp', '--cpxlp', '/var/folders/q3/gbyp81td3_d5440ybkrvlqgm0000gn/T/tmpznz1u8mh.pyomo.lp']
+
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --write /var/folders/q3/gbyp81td3_d5440ybkrvlqgm0000gn/T/tmphwi9efcu.glpk.raw
+ --wglp /var/folders/q3/gbyp81td3_d5440ybkrvlqgm0000gn/T/tmp34lb0j1r.glpk.glp
+ --cpxlp /var/folders/q3/gbyp81td3_d5440ybkrvlqgm0000gn/T/tmpznz1u8mh.pyomo.lp
+Reading problem data from '/var/folders/q3/gbyp81td3_d5440ybkrvlqgm0000gn/T/tmpznz1u8mh.pyomo.lp'...
+/var/folders/q3/gbyp81td3_d5440ybkrvlqgm0000gn/T/tmpznz1u8mh.pyomo.lp:2732: warning: lower bound of variable 'x2' redefined
+/var/folders/q3/gbyp81td3_d5440ybkrvlqgm0000gn/T/tmpznz1u8mh.pyomo.lp:2732: warning: upper bound of variable 'x2' redefined
+138 rows, 116 columns, 2172 non-zeros
+20 integer variables, all of which are binary
+2752 lines were read
+Writing problem data to '/var/folders/q3/gbyp81td3_d5440ybkrvlqgm0000gn/T/tmp34lb0j1r.glpk.glp'...
+2683 lines were written
+GLPK Integer Optimizer 5.0
+138 rows, 116 columns, 2172 non-zeros
+20 integer variables, all of which are binary
+Preprocessing...
+20 constraint coefficient(s) were reduced
+42 rows, 116 columns, 2076 non-zeros
+20 integer variables, all of which are binary
+Scaling...
+ A: min|aij| =  1.389e-03  max|aij| =  1.000e+06  ratio =  7.200e+08
+GM: min|aij| =  1.123e-01  max|aij| =  8.901e+00  ratio =  7.923e+01
+EQ: min|aij| =  1.287e-02  max|aij| =  1.000e+00  ratio =  7.771e+01
+2N: min|aij| =  9.033e-03  max|aij| =  1.538e+00  ratio =  1.702e+02
+Constructing initial basis...
+Size of triangular part is 42
+Solving LP relaxation...
+GLPK Simplex Optimizer 5.0
+42 rows, 116 columns, 2076 non-zeros
+      0: obj =  -0.000000000e+00 inf =   8.738e+05 (1)
+     28: obj =   1.333333333e+01 inf =   3.396e-12 (0)
+*    63: obj =   1.999206655e+01 inf =   4.414e-10 (0)
+OPTIMAL LP SOLUTION FOUND
+Integer optimization begins...
+Long-step dual simplex will be used
++    63: mip =     not found yet <=              +inf        (1; 0)
++  1679: >>>>>   1.700000000e+01 <=   1.700000000e+01   0.0% (158; 18)
++  1679: mip =   1.700000000e+01 <=     tree is empty   0.0% (0; 351)
+INTEGER OPTIMAL SOLUTION FOUND
+Time used:   0.1 secs
+Memory used: 0.6 Mb (657588 bytes)
+Writing MIP solution to '/var/folders/q3/gbyp81td3_d5440ybkrvlqgm0000gn/T/tmphwi9efcu.glpk.raw'...
+263 lines were written
+
