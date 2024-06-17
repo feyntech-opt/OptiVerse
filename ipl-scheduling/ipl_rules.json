@@ -1,0 +1,16 @@
+{
+    "num_days": 65,
+    "home_matches_per_team": 7,
+    "rest_days_between_matches": 3,
+    "max_matches_per_day": 1,
+    "groups": {
+        "group_a": [
+            "Mumbai Indians", "Kolkata Knight Riders", "Rajasthan Royals", 
+            "Delhi Capitals", "Lucknow Super Giants", "Gujarat Titans", "Sunrisers Hyderabad"
+        ],
+        "group_b": [
+            "Chennai Super Kings", "Royal Challengers Bangalore", "Punjab Kings", 
+            "Mumbai Indians", "Kolkata Knight Riders", "Rajasthan Royals", "Delhi Capitals"
+        ]
+    }
+}
