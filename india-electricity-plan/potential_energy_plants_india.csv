@@ -1,0 +1,8 @@
+Source,Potential Addition (GW),Min Plant Size (MW),Max Plant Size (MW),Min Plants,Avg Plant Size (MW),Max Plants
+Solar,281.93,10,2245,28193,100,126
+Wind,75.74,20,1000,3787,150,76
+Hydropower,15.33,1,1000,15330,500,15
+Biomass,5.15,10,50,515,25,103
+Nuclear,12.9,220,1000,59,1000,13
+Coal,54.4,200,4000,272,500,14
+Natural Gas,0.0,0,0,0,0,0
