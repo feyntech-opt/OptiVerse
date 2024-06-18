@@ -175,10 +175,16 @@ model += (
 # Solve the model
 model.solve()
 
-# Print the results
 for source in filtered_sources:
+    print(f"Results for {source}:")
     for year in years:
-        print(
-            f"Investment in {source} in {year}: ₹{investment[source][year].varValue:.2f} crore"
-        )
-    print(f"Average plant size for {source}: {capital_cost[source]} crore/MW")
+        investment_value = investment[source][year].varValue
+        if investment_value < 0.5:
+            continue
+        investment_value_formatted = format(investment_value / 10_000_000, ',.2f')
+        print(f"  Investment in {year}: ₹{investment_value_formatted} crore")
+    
+    capital_cost_value = capital_cost[source]
+    capital_cost_formatted = format(capital_cost_value, ',.2f')
+    # print(f"  Average plant size: ₹{capital_cost_formatted}/MW")
+    print()
