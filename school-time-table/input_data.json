@@ -1,0 +1,203 @@
+{
+  "teachers": [
+    {
+      "name": "Albert Einstein",
+      "subjects": ["Physics", "Mathematics", "Optional Subject"],
+      "availability": {
+        "Monday": [1, 1, 1, 1, 1, 1, 1, 1, 0],
+        "Tuesday": [1, 1, 1, 1, 1, 1, 1, 1, 0],
+        "Wednesday": [1, 1, 1, 1, 1, 1, 1, 1, 0],
+        "Thursday": [1, 1, 1, 1, 1, 1, 1, 1, 0],
+        "Friday": [1, 1, 1, 1, 1, 1, 1, 1, 0],
+        "Saturday": [1, 1, 1, 1, 0]
+      },
+      "seniority_level": 5
+    },
+    {
+      "name": "Isaac Newton",
+      "subjects": ["Physics", "Mathematics", "Computer Science"],
+      "availability": {
+        "Monday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Tuesday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Wednesday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Thursday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Friday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Saturday": [1, 1, 1, 1, 0]
+      },
+      "seniority_level": 4
+    },
+    {
+      "name": "Marie Curie",
+      "subjects": ["Chemistry", "Biology", "Physics"],
+      "availability": {
+        "Monday": [1, 1, 1, 1, 1, 1, 1, 1, 0],
+        "Tuesday": [1, 1, 1, 1, 1, 1, 1, 1, 0],
+        "Wednesday": [1, 1, 1, 1, 1, 1, 1, 1, 0],
+        "Thursday": [1, 1, 1, 1, 1, 1, 1, 1, 0],
+        "Friday": [1, 1, 1, 1, 1, 1, 1, 1, 0],
+        "Saturday": [1, 1, 1, 1, 0]
+      },
+      "seniority_level": 6
+    },
+    {
+      "name": "Nikola Tesla",
+      "subjects": ["Physics", "Computer Science", "Mathematics"],
+      "availability": {
+        "Monday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Tuesday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Wednesday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Thursday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Friday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Saturday": [1, 1, 1, 1, 0]
+      },
+      "seniority_level": 3
+    },
+    {
+      "name": "Rosalind Franklin",
+      "subjects": ["Biology", "Chemistry", "Physics"],
+      "availability": {
+        "Monday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Tuesday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Wednesday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Thursday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Friday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Saturday": [1, 1, 1, 1, 0]
+      },
+      "seniority_level": 5
+    },
+    {
+      "name": "William Shakespeare",
+      "subjects": ["English", "Arts", "Optional Subject"],
+      "availability": {
+        "Monday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Tuesday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Wednesday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Thursday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Friday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Saturday": [1, 1, 1, 1, 0]
+      },
+      "seniority_level": 6
+    },
+    {
+      "name": "Leonardo da Vinci",
+      "subjects": ["Arts", "Mathematics", "Physics"],
+      "availability": {
+        "Monday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Tuesday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Wednesday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Thursday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Friday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Saturday": [1, 1, 1, 1, 1]
+      },
+      "seniority_level": 5
+    },
+    {
+      "name": "Usain Bolt",
+      "subjects": ["Physical Education", "Biology", "Optional Subject"],
+      "availability": {
+        "Monday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Tuesday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Wednesday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Thursday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Friday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Saturday": [1, 1, 1, 1, 1]
+      },
+      "seniority_level": 4
+    },
+    {
+      "name": "Stephen Hawking",
+      "subjects": [
+        "Physics",
+        "Mathematics",
+        "Computer Science",
+        "Optional Subject"
+      ],
+      "availability": {
+        "Monday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Tuesday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Wednesday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Thursday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Friday": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "Saturday": [1, 1, 1, 1, 0]
+      },
+      "seniority_level": 4
+    }
+  ],
+  "class_schedule": {
+    "Monday": [
+      "English",
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "Computer Science",
+      "Physical Education",
+      "Arts",
+      "Optional Subject"
+    ],
+    "Tuesday": [
+      "English",
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "Computer Science",
+      "Physical Education",
+      "Arts",
+      "Optional Subject"
+    ],
+    "Wednesday": [
+      "English",
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "Computer Science",
+      "Physical Education",
+      "Arts",
+      "Optional Subject"
+    ],
+    "Thursday": [
+      "English",
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "Computer Science",
+      "Physical Education",
+      "Arts",
+      "Optional Subject"
+    ],
+    "Friday": [
+      "English",
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "Computer Science",
+      "Physical Education",
+      "Arts",
+      "Optional Subject"
+    ],
+    "Saturday": ["English", "Mathematics", "Physics", "Chemistry", "Biology"]
+  },
+  "periods_per_day": {
+    "Monday": 9,
+    "Tuesday": 9,
+    "Wednesday": 9,
+    "Thursday": 9,
+    "Friday": 9,
+    "Saturday": 5
+  },
+  "subject_periods": {
+    "English": 5,
+    "Mathematics": 7,
+    "Physics": 7,
+    "Chemistry": 5,
+    "Biology": 4,
+    "Computer Science": 4,
+    "Physical Education": 4,
+    "Arts": 4,
+    "Optional Subject": 10
+  }
+}
