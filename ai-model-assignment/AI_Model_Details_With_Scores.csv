@@ -1,0 +1,16 @@
+Model,Company,Type,Cost,Price,Context Length,MMLU Score,Text,Image,Video,Audio
+GPT-4,OpenAI,Text,Usage-based,0.03,8192,86.4,1,0,0,0
+DALL-E 3,OpenAI,Image,Usage-based,0.034,1024,65.9,0,1,0,0
+Whisper,OpenAI,Audio,Usage-based,0.059,1200,71.7,0,0,0,1
+PaLM 2,Google,Text,Usage-based,0.028,4096,80.1,1,0,0,0
+Gemini Pro,Google,Text,Usage-based,0.03,32768,83.7,1,0,0,0
+Claude 3,Anthropic,Text,Usage-based,0.032,100000,85.5,1,0,0,0
+LLaMA 3,Meta,Text,Free,0.0,4096,68.9,1,0,0,0
+Stable Diffusion XL,Stability AI,Image,Usage-based,0.025,1024,62.3,0,1,0,0
+Midjourney,Midjourney,Image,Subscription,0.04,2048,68.5,0,1,0,0
+ElevenLabs,ElevenLabs,Audio,Usage-based,0.055,1200,73.2,0,0,0,1
+NVIDIA Maxine,NVIDIA,Video,Usage-based,0.07,4096,76.8,0,0,1,0
+TestGPT,TestSigma,Automated Testing,Usage-based,0.045,8192,78.5,1,0,0,0
+Selenium AI,BrowserStack,Automated Testing,Subscription,0.05,4096,75.3,1,0,0,0
+RecSys-GPT,Amazon,Recommendation Systems,Usage-based,0.035,16384,82.1,1,0,0,0
+Personalizer,Microsoft,Recommendation Systems,Usage-based,0.04,8192,79.6,1,0,0,0

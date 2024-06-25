@@ -1,0 +1,8 @@
+Role,Number of Employees,Hours per Week,Equivalent Tokens,AI Model Type
+Game Designer,2,40,"200,000 tokens",Text
+Artist/Graphic Designer,3,40,"100,000 tokens",Image
+Software Developer/Programmer,4,40,"300,000 tokens",Text
+Sound Designer/Music Composer,1,20,"50,000 tokens",Audio
+Quality Assurance Tester,2,40,"150,000 tokens",Automated Testing
+Project Manager,1,40,"250,000 tokens",Text
+Marketing Specialist,1,20,"80,000 tokens",Recommendation Systems
