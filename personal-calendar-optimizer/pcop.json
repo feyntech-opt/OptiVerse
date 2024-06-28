@@ -1,0 +1,146 @@
+{
+  "pcop_data": {
+    "timeHorizon": {
+      "startDate": "2024-07-01",
+      "endDate": "2024-12-31",
+      "intervalMinutes": 30
+    },
+    "activities": [
+      {
+        "name": "Sleep",
+        "dailyMinDuration": 420,
+        "dailyMaxDuration": 540,
+        "preferredStartTime": "22:00",
+        "preferredEndTime": "07:00"
+      },
+      {
+        "name": "Reading",
+        "dailyMinDuration": 60,
+        "dailyMaxDuration": 120
+      },
+      {
+        "name": "Eating",
+        "dailyOccurrences": 3,
+        "minDuration": 20,
+        "maxDuration": 30
+      },
+      {
+        "name": "Learning Japanese",
+        "dailyMinDuration": 60,
+        "dailyMaxDuration": 120
+      },
+      {
+        "name": "Learning Mathematics",
+        "dailyMinDuration": 60,
+        "dailyMaxDuration": 120
+      },
+      {
+        "name": "Work",
+        "dailyMinDuration": 240,
+        "dailyMaxDuration": 360
+      },
+      {
+        "name": "Exercise",
+        "dailyDuration": 30
+      }
+    ],
+    "goals": [
+      {
+        "name": "Japanese Proficiency",
+        "targetLevel": "N4",
+        "milestones": [
+          {
+            "description": "Complete Genki I textbook",
+            "dueDate": "2024-09-30"
+          },
+          {
+            "description": "Pass JLPT N5 mock test",
+            "dueDate": "2024-11-30"
+          }
+        ]
+      },
+      {
+        "name": "Fitness",
+        "targetDescription": "Run 10km under 50 minutes",
+        "milestones": [
+          {
+            "description": "Run 5km under 25 minutes",
+            "dueDate": "2024-09-30"
+          },
+          {
+            "description": "Run 8km under 40 minutes",
+            "dueDate": "2024-11-30"
+          }
+        ]
+      },
+      {
+        "name": "Startup Progress",
+        "targetDescription": "Launch MVP",
+        "milestones": [
+          {
+            "description": "Complete product design",
+            "dueDate": "2024-08-31"
+          },
+          {
+            "description": "Finish development",
+            "dueDate": "2024-10-31"
+          },
+          {
+            "description": "Start beta testing",
+            "dueDate": "2024-12-15"
+          }
+        ]
+      },
+      {
+        "name": "Reading Goal",
+        "targetDescription": "Read 12 books",
+        "milestones": [
+          {
+            "description": "Read 6 books",
+            "dueDate": "2024-09-30"
+          },
+          {
+            "description": "Read 12 books",
+            "dueDate": "2024-12-31"
+          }
+        ]
+      }
+    ],
+    "constraints": {
+      "precedence": [
+        {
+          "activity": "Exercise",
+          "notAfter": "Eating",
+          "minGapMinutes": 60
+        },
+        {
+          "activity": "Sleep",
+          "notAfter": "Reading",
+          "minGapMinutes": 30
+        }
+      ],
+      "breaks": {
+        "activity": "Work",
+        "breakDurationMinutes": 15,
+        "afterDurationMinutes": 120
+      },
+      "flexibility": {
+        "weekendDifferentiation": true,
+        "holidays": [
+          "2024-12-25",
+          "2024-12-31"
+        ]
+      }
+    },
+    "objectiveWeights": {
+      "dailyProductivity": 0.3,
+      "dailyWellbeing": 0.3,
+      "goalProgress": 0.4
+    }
+  },
+  "solver_options": {
+    "time_limit_seconds": 30,
+    "solution_limit": 1,
+    "log_search_progress": true
+  }
+}
