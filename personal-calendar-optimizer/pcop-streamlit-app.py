@@ -5,7 +5,7 @@ import pandas as pd
 import plotly.figure_factory as ff
 
 # Import functions from your updated pcop_solver.py
-from . import create_pcop_model, solve_pcop_model
+from pcop_solver import create_pcop_model, solve_pcop_model
 
 # Convert schedule to DataFrame for easy display
 def schedule_to_df(schedule, start_date):
