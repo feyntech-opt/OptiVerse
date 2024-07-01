@@ -1,8 +1,8 @@
 import pandas as pd
 
 # Load the provided CSV data
-file_path = 'milk-supply-chain-optimization/India pincode list.xlsx'
-df = pd.read_excel(file_path)
+file_path = 'milk-supply-chain-optimization/post_offices_interpolated.csv'
+df = pd.read_csv(file_path)
 
 # Define the correct districts for each type of center based on actual Amul operations
 districts_with_village_cooperatives = [
