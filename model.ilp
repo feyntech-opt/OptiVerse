@@ -1,0 +1,8 @@
+\ Model AI_Model_Assignment_copy
+\ LP format - for model browsing. Use MPS format to capture full model detail.
+Minimize
+ 
+Subject To
+ OneModelPerRole_10: = 1
+Bounds
+End
