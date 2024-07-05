@@ -130,7 +130,8 @@ def solve_period(start_date, end_date):
         flow_data = [(i, j, p, flow[i,j,p].x) for (i,j) in ARCS for p in PRODUCTS if flow[i,j,p].x > 0]
         storage_data = [(u, p, storage[u,p].x) for u in UNITS for p in PRODUCTS if storage[u,p].x > 0]
         production_data = [(u, p, production[u,p].x) for u in PLANTS for p in DAIRY_PRODUCTS if production[u,p].x > 0]
-        unmet_demand_data = [(demand.loc[idx, 'Date'], demand.loc[idx, 'Retail_Unit_ID'], demand.loc[idx, 'Product'], slack[idx].x) for idx in demand.index if slack[idx].x > 0]
+        unmet_demand_data = [(demand.loc[idx, 'Date'], demand.loc[idx, 'Retail_Unit_ID'], demand.loc[idx, 'Product'], slack[idx].x) 
+                             for idx in demand.index if slack[idx].x > 0]
         return model.objVal, flow_data, storage_data, production_data, unmet_demand_data
     else:
         log_message(f"Optimization failed with status: {model.status}")
