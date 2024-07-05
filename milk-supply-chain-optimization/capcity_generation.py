@@ -9,7 +9,7 @@ np.random.seed(42)
 df_amul = pd.read_csv('milk-supply-chain-optimization/updated_India_pincode_list.csv')
 
 # Filter for plants only
-plants_df = df_amul[df_amul['CenterType'] == 'Plant'].copy()
+plants_df = df_amul[df_amul['IsPlant'] == True].copy()
 
 # List of products
 products = ['Milk', 'Butter', 'Cheese', 'Ghee', 'Yogurt', 'Paneer', 'Ice Cream']

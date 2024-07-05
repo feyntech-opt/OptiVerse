@@ -57,9 +57,9 @@ coalition_df["Critical"] = coalition_df["Abbreviation"] != "BJP"
 # Calculate the influence factor for each party
 total_seats = coalition_df["Lok Sabha seats"].sum()
 coalition_df["Influence Factor"] = total_seats / coalition_df["Lok Sabha seats"]
-coalition_df.loc[
-    coalition_df["Abbreviation"] == "BJP", "Influence Factor"
-] = 1  # BJP does not get an enhanced influence
+coalition_df.loc[coalition_df["Abbreviation"] == "BJP", "Influence Factor"] = (
+    1  # BJP does not get an enhanced influence
+)
 
 # Cap influence factors to prevent excessive dominance by small parties
 max_influence_factor = 3
