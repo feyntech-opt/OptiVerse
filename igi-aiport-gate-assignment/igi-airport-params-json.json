@@ -1,0 +1,48 @@
+{
+  "number_of_airports": 1,
+  "airport_details": {
+    "id": "DEL",
+    "name": "Indira Gandhi International Airport",
+    "iata_code": "DEL",
+    "icao_code": "VIDP",
+    "timezone": "Asia/Kolkata"
+  },
+  "terminals_per_airport": 3,
+  "terminal_details": [
+    {"id": "T1", "name": "Terminal 1", "capacity": 17000000},
+    {"id": "T2", "name": "Terminal 2", "capacity": 15000000},
+    {"id": "T3", "name": "Terminal 3", "capacity": 40000000}
+  ],
+  "gates_per_terminal": 8,
+  "gate_types": {
+    "boarding_bridge": [true, false],
+    "max_passengers": [200, 300, 400]
+  },
+  "aircraft_types": [
+    {"type": "A320", "wingspan": 35.8, "length": 37.6, "height": 11.8, "max_passengers": 180},
+    {"type": "B737", "wingspan": 35.9, "length": 39.5, "height": 12.5, "max_passengers": 200},
+    {"type": "A330", "wingspan": 60.3, "length": 63.7, "height": 16.8, "max_passengers": 300},
+    {"type": "B777", "wingspan": 64.8, "length": 73.9, "height": 18.5, "max_passengers": 400},
+    {"type": "A350", "wingspan": 64.8, "length": 66.8, "height": 17.1, "max_passengers": 350},
+    {"type": "B787", "wingspan": 60.1, "length": 62.8, "height": 17.0, "max_passengers": 330}
+  ],
+  "number_of_aircraft": 100,
+  "airlines": [
+    {"iata_code": "AI", "name": "Air India", "is_domestic": true},
+    {"iata_code": "6E", "name": "IndiGo", "is_domestic": true},
+    {"iata_code": "UK", "name": "Vistara", "is_domestic": true},
+    {"iata_code": "SG", "name": "SpiceJet", "is_domestic": true},
+    {"iata_code": "EK", "name": "Emirates", "is_domestic": false},
+    {"iata_code": "LH", "name": "Lufthansa", "is_domestic": false}
+  ],
+  "number_of_flights": 1300,
+  "domestic_airports": ["BOM", "BLR", "HYD", "MAA", "CCU"],
+  "international_airports": ["DXB", "LHR", "JFK", "SIN", "FRA"],
+  "ground_services": [
+    {"type": "Refueling", "provider": "IndianOil Skytanking", "average_duration_minutes": 30},
+    {"type": "Cleaning", "provider": "ABC Cleaning Services", "average_duration_minutes": 20},
+    {"type": "Catering", "provider": "SkyGourmet", "average_duration_minutes": 25},
+    {"type": "Baggage Handling", "provider": "AISATS", "average_duration_minutes": 35}
+  ],
+  "weather_conditions_duration_days": 7
+}
