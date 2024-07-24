@@ -4,11 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # Configure the page
-st.set_page_config(
-    page_title="Indian Income Tax Optimizer",
-    page_icon="🇮🇳",
-    layout="wide",
-)
+st.set_page_config(page_title="Indian Income Tax Optimizer", page_icon="🇮🇳", layout="wide")
 
 st.markdown("""
     <head>
@@ -61,9 +57,13 @@ def calculate_tax(income):
     return tax
 
 def optimize_salary(gross_salary):
-    # Simplified optimization logic
-    basic = min(gross_salary * 0.5, 180000)  # 50% of gross or 1.8L, whichever is lower
-    hra = min(gross_salary * 0.4, 100000)    # 40% of gross or 1L, whichever is lower
+    # Dynamic caps based on the gross salary
+    basic_cap = gross_salary * 0.4  # Cap basic salary at 40% of gross salary
+    hra_cap = gross_salary * 0.5    # Cap HRA at 50% of gross salary
+    
+    # Calculate components
+    basic = basic_cap
+    hra = min(hra_cap, gross_salary * 0.2)  # Adjust HRA dynamically
     special = gross_salary - basic - hra
     
     section_80c = min(150000, gross_salary * 0.15)  # 15% of gross or 1.5L, whichever is lower
