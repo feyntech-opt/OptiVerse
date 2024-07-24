@@ -57,7 +57,7 @@ def calculate_tax(income):
     return tax
 
 def optimize_salary(gross_salary):
-    # Dynamic caps based on the gross salary
+    # Ensure optimization follows government guidelines
     basic_cap = gross_salary * 0.4  # Cap basic salary at 40% of gross salary
     hra_cap = gross_salary * 0.5    # Cap HRA at 50% of gross salary
     
