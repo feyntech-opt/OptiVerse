@@ -36,3 +36,6 @@ OptiVerse is licensed under the MIT License, making it free to use and distribut
 ## Join Us:
 Be a part of the OptiVerse community. Follow our repository, contribute to the code, and help us make a significant impact on solving real-world problems through advanced optimization techniques.
 
+
+# A SMALL CHANGE
+
