@@ -4,7 +4,22 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # Configure the page
-st.set_page_config(page_title="Indian Income Tax Optimizer", page_icon="🇮🇳", layout="wide")
+st.set_page_config(
+    page_title="Indian Income Tax Optimizer",
+    page_icon="🇮🇳",
+    layout="wide",
+)
+
+st.markdown("""
+    <head>
+        <title>Indian Income Tax Optimizer</title>
+        <meta property="og:title" content="Indian Income Tax Optimizer" />
+        <meta property="og:description" content="Optimize your Indian income tax and save money with this open-source tool." />
+        <meta property="og:image" content="https://ibb.co/kGvzH2f" />
+        <meta property="og:url" content="https://taxoptindia.streamlit.app/" />
+        <meta property="og:type" content="website" />
+    </head>
+    """, unsafe_allow_html=True)
 
 # Custom CSS to improve UI
 st.markdown("""
