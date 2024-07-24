@@ -1,0 +1,203 @@
+{
+  "product": {
+    "name": "Dolo 650",
+    "unit": "Tablet",
+    "price_per_unit": 1.5
+  },
+  "raw_materials": [
+    {
+      "name": "Para-Aminophenol (PAP)",
+      "unit_cost_min": 1000,
+      "unit_cost_max": 2000,
+      "unit": "kg",
+      "quantity_per_100g_paracetamol": 0.74
+    },
+    {
+      "name": "Acetic Anhydride",
+      "unit_cost_min": 100,
+      "unit_cost_max": 200,
+      "unit": "kg",
+      "quantity_per_100g_paracetamol": 0.5
+    },
+    {
+      "name": "Catalysts",
+      "unit_cost_min": 500,
+      "unit_cost_max": 1000,
+      "unit": "kg",
+      "quantity_per_100g_paracetamol": 0.01
+    },
+    {
+      "name": "Solvents",
+      "unit_cost_min": 50,
+      "unit_cost_max": 100,
+      "unit": "L",
+      "quantity_per_100g_paracetamol": 0.1
+    }
+  ],
+  "suppliers": [
+    {
+      "name": "Aarti Industries",
+      "location": "India",
+      "materials": ["Para-Aminophenol (PAP)"]
+    },
+    {
+      "name": "Sigma-Aldrich",
+      "location": "International",
+      "materials": ["Para-Aminophenol (PAP)", "Catalysts", "Solvents"]
+    },
+    {
+      "name": "Jubilant Life Sciences",
+      "location": "India",
+      "materials": ["Acetic Anhydride"]
+    },
+    {
+      "name": "Eastman Chemical Company",
+      "location": "International",
+      "materials": ["Acetic Anhydride"]
+    },
+    {
+      "name": "Loba Chemie",
+      "location": "India",
+      "materials": ["Catalysts", "Solvents"]
+    },
+    {
+      "name": "Thermo Fisher Scientific",
+      "location": "International",
+      "materials": ["Catalysts", "Solvents"]
+    }
+  ],
+  "facilities": [
+    {
+      "name": "Bangalore Plant",
+      "type": "Manufacturing",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "latitude": 12.9716,
+      "longitude": 77.5946,
+      "min_capacity": 100,
+      "max_capacity": 500,
+      "storage_cost_min": 50000,
+      "storage_cost_max": 150000,
+      "manufacturing_cost_min": 0.5,
+      "manufacturing_cost_max": 1.5
+    },
+    {
+      "name": "Goa Plant",
+      "type": "Manufacturing",
+      "city": "Goa",
+      "state": "Goa",
+      "latitude": 15.2993,
+      "longitude": 74.124,
+      "min_capacity": 200,
+      "max_capacity": 700,
+      "storage_cost_min": 60000,
+      "storage_cost_max": 160000,
+      "manufacturing_cost_min": 0.6,
+      "manufacturing_cost_max": 1.6
+    },
+    {
+      "name": "Baddi Plant",
+      "type": "Manufacturing",
+      "city": "Baddi",
+      "state": "Himachal Pradesh",
+      "latitude": 31.0556,
+      "longitude": 76.8541,
+      "min_capacity": 300,
+      "max_capacity": 900,
+      "storage_cost_min": 70000,
+      "storage_cost_max": 170000,
+      "manufacturing_cost_min": 0.7,
+      "manufacturing_cost_max": 1.7
+    },
+    {
+      "name": "Pondicherry Plant",
+      "type": "Manufacturing",
+      "city": "Pondicherry",
+      "state": "Puducherry",
+      "latitude": 11.9416,
+      "longitude": 79.8083,
+      "min_capacity": 150,
+      "max_capacity": 600,
+      "storage_cost_min": 55000,
+      "storage_cost_max": 155000,
+      "manufacturing_cost_min": 0.55,
+      "manufacturing_cost_max": 1.55
+    },
+    {
+      "name": "Sikkim Plant",
+      "type": "Manufacturing",
+      "city": "Sikkim",
+      "state": "Sikkim",
+      "latitude": 27.533,
+      "longitude": 88.5122,
+      "min_capacity": 250,
+      "max_capacity": 800,
+      "storage_cost_min": 65000,
+      "storage_cost_max": 165000,
+      "manufacturing_cost_min": 0.65,
+      "manufacturing_cost_max": 1.65
+    },
+    {
+      "name": "Chennai Warehouse",
+      "type": "Storage",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "min_capacity": 500,
+      "max_capacity": 2000,
+      "storage_cost_min": 100000,
+      "storage_cost_max": 300000,
+      "manufacturing_cost_min": 0,
+      "manufacturing_cost_max": 0
+    }
+  ],
+  "transportation_types": [
+    {
+      "type": "Truck",
+      "cost_per_km": 5,
+      "description": "Standard road transportation"
+    },
+    {
+      "type": "Rail",
+      "cost_per_km": 2.5,
+      "description": "Rail freight transportation"
+    },
+    {
+      "type": "Air",
+      "cost_per_km": 20,
+      "description": "Air freight for urgent deliveries"
+    }
+  ],
+  "customer_types": [
+    "Wholesaler",
+    "Retailer",
+    "Hospital",
+    "Online Pharmacy",
+    "Government"
+  ],
+  "demand_distribution": {
+    "Retailers": 0.5,
+    "Wholesalers": 0.1,
+    "Hospitals": 0.2,
+    "Online_Pharmacies": 0.1,
+    "Government": 0.1
+  },
+  "tax": {
+    "gst_rate": 0.18
+  },
+  "digital_twin": {
+    "tablet_weight": 0.75, 
+    "active_ingredient_percentage": 0.65, 
+    "excipient_percentages": {
+      "Para-Aminophenol (PAP)": 0.74,
+      "Acetic Anhydride": 0.5,
+      "Catalysts": 0.01,
+      "Solvents": 0.1
+    },
+    "production_rate": 100000, 
+    "packaging_unit": 15, 
+    "box_capacity": 10, 
+    "shelf_life": 24
+  }
+}
