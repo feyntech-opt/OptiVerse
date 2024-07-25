@@ -4,7 +4,11 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # Configure the page
-st.set_page_config(page_title="Indian Income Tax Optimizer", page_icon="🇮🇳", layout="wide")
+st.set_page_config(
+    page_title="Indian Income Tax Optimizer",
+    page_icon="🇮🇳",
+    layout="wide",
+)
 
 st.markdown("""
     <head>
@@ -12,7 +16,7 @@ st.markdown("""
         <meta property="og:title" content="Indian Income Tax Optimizer" />
         <meta property="og:description" content="Optimize your Indian income tax and save money with this open-source tool." />
         <meta property="og:image" content="https://ibb.co/kGvzH2f" />
-        <meta property="og:url" content="https://taxoptindia.streamlit.app/" />
+        <meta property="og:url" content="https://your-streamlit-app-url.com" />
         <meta property="og:type" content="website" />
     </head>
     """, unsafe_allow_html=True)
@@ -40,15 +44,23 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Helper functions
-def calculate_tax(income):
-    tax_slabs = [
-        (0, 300000, 0),
-        (300001, 600000, 0.05),
-        (600001, 900000, 0.10),
-        (900001, 1200000, 0.15),
-        (1200001, 1500000, 0.20),
-        (1500001, float('inf'), 0.30)
-    ]
+def calculate_tax(income, tax_regime):
+    if tax_regime == "Old":
+        tax_slabs = [
+            (0, 250000, 0),
+            (250001, 500000, 0.05),
+            (500001, 1000000, 0.20),
+            (1000001, float('inf'), 0.30)
+        ]
+    else:
+        tax_slabs = [
+            (0, 300000, 0),
+            (300001, 600000, 0.05),
+            (600001, 900000, 0.10),
+            (900001, 1200000, 0.15),
+            (1200001, 1500000, 0.20),
+            (1500001, float('inf'), 0.30)
+        ]
     tax = 0
     for lower, upper, rate in tax_slabs:
         if income > lower:
@@ -56,21 +68,17 @@ def calculate_tax(income):
             tax += taxable * rate
     return tax
 
-def optimize_salary(gross_salary):
-    # Ensure optimization follows government guidelines
-    basic_cap = gross_salary * 0.4  # Cap basic salary at 40% of gross salary
-    hra_cap = gross_salary * 0.5    # Cap HRA at 50% of gross salary
-    
+def optimize_salary(gross_salary, tax_regime):
     # Calculate components
-    basic = basic_cap
-    hra = min(hra_cap, gross_salary * 0.2)  # Adjust HRA dynamically
+    basic = gross_salary * 0.4  # Cap basic salary at 40% of gross salary
+    hra = gross_salary * 0.2  # Cap HRA at 20% of gross salary
     special = gross_salary - basic - hra
     
     section_80c = min(150000, gross_salary * 0.15)  # 15% of gross or 1.5L, whichever is lower
     section_80d = min(25000, gross_salary * 0.05)   # 5% of gross or 25K, whichever is lower
     
     taxable_income = gross_salary - hra - section_80c - section_80d
-    tax_payable = calculate_tax(taxable_income)
+    tax_payable = calculate_tax(taxable_income, tax_regime)
     
     return {
         "Basic Salary": basic,
@@ -89,10 +97,13 @@ def main():
 
     # Input section
     gross_salary = st.number_input("Enter your annual gross salary (₹)", min_value=0, value=500000, step=10000, format="%d")
+    tax_regime = st.selectbox("Select your tax regime", ["Old", "New"])
 
     if st.button("Optimize My Salary"):
         if gross_salary > 0:
-            results = optimize_salary(gross_salary)
+            results_old = optimize_salary(gross_salary, "Old")
+            results_new = optimize_salary(gross_salary, "New")
+            selected_results = results_old if tax_regime == "Old" else results_new
             
             # Display results
             col1, col2 = st.columns(2)
@@ -100,7 +111,7 @@ def main():
             with col1:
                 st.markdown("<p class='medium-font'>Salary Breakdown</p>", unsafe_allow_html=True)
                 fig = px.pie(
-                    values=[results["Basic Salary"], results["HRA"], results["Special Allowance"]],
+                    values=[selected_results["Basic Salary"], selected_results["HRA"], selected_results["Special Allowance"]],
                     names=["Basic Salary", "HRA", "Special Allowance"],
                     title="Optimized Salary Distribution"
                 )
@@ -108,12 +119,12 @@ def main():
 
             with col2:
                 st.markdown("<p class='medium-font'>Tax Savings</p>", unsafe_allow_html=True)
-                original_tax = calculate_tax(gross_salary)
-                tax_saved = original_tax - results["Tax Payable"]
+                original_tax = calculate_tax(gross_salary, tax_regime)
+                tax_saved = original_tax - selected_results["Tax Payable"]
                 
                 fig = go.Figure(go.Indicator(
                     mode = "number+delta",
-                    value = results["Tax Payable"],
+                    value = selected_results["Tax Payable"],
                     number = {'prefix': "₹"},
                     delta = {'position': "top", 'reference': original_tax, 'valueformat': '.0f'},
                     title = {"text": "Optimized Tax vs Original Tax"}
@@ -123,7 +134,7 @@ def main():
             # Detailed breakdown
             st.markdown("<div class='result-box'>", unsafe_allow_html=True)
             st.markdown("<p class='medium-font'>Detailed Breakdown</p>", unsafe_allow_html=True)
-            for key, value in results.items():
+            for key, value in selected_results.items():
                 st.markdown(f"<p class='small-font'><b>{key}:</b> ₹{value:,.2f}</p>", unsafe_allow_html=True)
             st.markdown("</div>", unsafe_allow_html=True)
 
@@ -135,6 +146,11 @@ def main():
             - If eligible, claim HRA benefits
             - Explore NPS investments for additional tax benefits
             """)
+
+            # Comparison
+            st.markdown("<p class='medium-font'>Tax Comparison</p>", unsafe_allow_html=True)
+            st.markdown(f"<p class='small-font'><b>Old Regime Tax Payable:</b> ₹{results_old['Tax Payable']:,.2f}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p class='small-font'><b>New Regime Tax Payable:</b> ₹{results_new['Tax Payable']:,.2f}</p>", unsafe_allow_html=True)
 
     # Information section
     with st.expander("Understanding Your Taxes"):
