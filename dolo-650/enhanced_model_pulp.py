@@ -437,6 +437,7 @@ if __name__ == "__main__":
 
         # Extract solution
         production, sourcing, distribution = extract_solution(model)
+        
 
         # Print some statistics
         logger.info(f"Total Production: {production['Value'].sum()}")

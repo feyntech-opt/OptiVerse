@@ -27,7 +27,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 # Load CSV data
-df = pd.read_csv('dolo-650/updated_India_pincode_list_with_population.csv')
+df = pd.read_csv('dolo-650/final_India_pincode_list_with_cleaned_population.csv')
 
 def random_date(start, end):
     return start + timedelta(
