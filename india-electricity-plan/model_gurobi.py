@@ -69,8 +69,6 @@ investment = model.addVars(filtered_sources, years, name="Investment", lb=0.0)
 
 log("Introducing slack variables to handle potential constraint violations")
 slack_target = model.addVars(filtered_sources, name="Slack_Target", lb=0.0)
-slack_max = model.addVars(filtered_sources, name="Slack_Max", lb=0.0)
-slack_min = model.addVars(filtered_sources, name="Slack_Min", lb=0.0)
 slack_min_budget = model.addVars(years, name="Slack_Min_Budget", lb=0.0)
 slack_max_budget = model.addVars(years, name="Slack_Max_Budget", lb=0.0)
 slack_renewable_capacity = model.addVar(name="Slack_Renewable_Capacity", lb=0.0)
@@ -82,7 +80,7 @@ penalty_factor = 1.1
 model.setObjective(
     gp.quicksum(investment[s, y] for s in filtered_sources for y in years) +
     penalty_factor * (
-        gp.quicksum(slack_target[s] + slack_max[s] + slack_min[s] for s in filtered_sources) +
+        gp.quicksum(slack_target[s] for s in filtered_sources) +
         gp.quicksum(slack_min_budget[y] + slack_max_budget[y] for y in years) +
         slack_renewable_capacity + slack_renewable_production + slack_emissions
     ),
@@ -93,19 +91,15 @@ log("Adding constraints to the model...")
 total_investment = {}
 for source in filtered_sources:
     total_target_cost = (target_capacity[source] - current_capacity[source]) * capital_cost[source]
-    total_max_cost = max_plants[source] * capital_cost[source]
-    total_min_cost = min_plants[source] * capital_cost[source]
 
     model.addConstr(investment.sum(source, '*') + slack_target[source] >= total_target_cost, f"Target_{source}")
-    model.addConstr(investment.sum(source, '*') <= total_max_cost + slack_max[source], f"Max_{source}")
-    model.addConstr(investment.sum(source, '*') + slack_min[source] >= total_min_cost, f"Min_{source}")
 
     total_investment[source] = total_target_cost
     log(f"Added investment constraints for {source}")
 
-total_investment_required = sum(total_investment.values())
-average_annual_investment = total_investment_required / len(years)
-log(f"Total investment required: {format_inr(total_investment_required / 1e7)}")
+total_investment_budget = 44*10e11
+average_annual_investment = total_investment_budget / len(years)
+log(f"Total investment required: {format_inr(total_investment_budget / 1e7)}")
 log(f"Average annual investment: {format_inr(average_annual_investment / 1e7)}")
 
 min_annual_budget = 0.8 * average_annual_investment
@@ -207,8 +201,6 @@ if model.status == GRB.OPTIMAL:
         
         if slack_target[source].X > 0.5:
             print(f"  ⚠️ {source} target shortfall: {format_inr(slack_target[source].X / 1e7)}")
-        if slack_max[source].X > 0.5:
-            print(f"  ⚠️ {source} max capacity exceeded by: {format_inr(slack_max[source].X / 1e7)}")
     
     print("\nAnnual Budget Analysis:")
     for year in years:
