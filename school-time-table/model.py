@@ -1,6 +1,11 @@
 import json
 import csv
 from ortools.sat.python import cp_model
+from colorama import Fore, Style, init
+from tabulate import tabulate
+
+# Initialize colorama
+init(autoreset=True)
 
 # Load the JSON data
 with open('school-time-table/input_data.json') as f:
@@ -89,7 +94,7 @@ for subject, required_periods in data['subject_periods'].items():
 
 # Solver
 solver = cp_model.CpSolver()
-solver.parameters.log_search_progress = True
+solver.parameters.log_search_progress = False
 solver.parameters.max_time_in_seconds = 10
 
 
@@ -114,6 +119,47 @@ class SolutionPrinter(cp_model.CpSolverSolutionCallback):
                         if self.Value(assignments[(day, period, subject, teacher['name'])]):
                             solution[day].append({"period": period + 1, "subject": subject, "teacher": teacher['name']})
         self.solutions.append(solution)
+
+
+class ElegantSolutionPrinter(cp_model.CpSolverSolutionCallback):
+    def __init__(self, assignments, limit=3):
+        cp_model.CpSolverSolutionCallback.__init__(self)
+        self.assignments = assignments
+        self.solution_count = 0
+        self.limit = limit
+
+    def OnSolutionCallback(self):
+        if self.solution_count >= self.limit:
+            return
+        self.solution_count += 1
+
+        print(f"\n{Fore.CYAN}{Style.BRIGHT}Solution {self.solution_count}:{Style.RESET_ALL}")
+        print(f"{'-' * 70}")
+
+        headers = ["Period"] + days
+        max_periods = max(periods_per_day.values())
+        
+        table = []
+        for period in range(max_periods):
+            row = [f"Period {period + 1}"]
+            for day in days:
+                if period < periods_per_day[day]:
+                    period_assignment = [
+                        (subject[:3], teacher['name'][:3])  # Use first 3 letters for both subject and teacher
+                        for teacher in teachers
+                        for subject in teacher['subjects']
+                        if self.Value(assignments[(day, period, subject, teacher['name'])])
+                    ]
+                    if period_assignment:
+                        row.append(f"{period_assignment[0][0]}-{period_assignment[0][1]}")
+                    else:
+                        row.append("")
+                else:
+                    row.append("")
+            table.append(row)
+
+        print(tabulate(table, headers, tablefmt="grid"))
+        print(f"{'-' * 70}")
 
 
 # Instantiate and solve the model with the solution printer
