@@ -96,8 +96,8 @@ for source in filtered_sources:
     total_investment[source] = total_target_cost
 
 # Calculate total investment required and average annual investment
-total_investment_required = sum(total_investment.values())
-average_annual_investment = total_investment_required / len(years)
+total_investment_budget = 44*10e12
+average_annual_investment = total_investment_budget / len(years)
 
 # Set a range for annual budget, e.g., ±20% of the average annual investment
 min_annual_budget = 0.8 * average_annual_investment
