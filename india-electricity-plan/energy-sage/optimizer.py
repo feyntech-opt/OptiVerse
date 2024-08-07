@@ -4,10 +4,10 @@ from gurobipy import GRB
 from config import TIME_LIMIT, MIP_GAP
 
 
-def optimize_model(model, data, investment, capacity_slack, total_capacity_var, total_capacity_slack, source_used, total_production):
+def optimize_model(model, data, investment, capacity_slack, total_capacity_var, total_capacity_slack, source_used, total_production, params):
     # Set solver parameters
-    model.Params.TimeLimit = TIME_LIMIT
-    model.Params.MIPGap = MIP_GAP
+    model.Params.TimeLimit = params['TIME_LIMIT']
+    model.Params.MIPGap = params['MIP_GAP']
 
     # Optimize
     model.optimize()
