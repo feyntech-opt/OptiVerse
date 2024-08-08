@@ -37,7 +37,7 @@ def run_app():
 
     with col2:
         params['EMISSIONS_INCREASE_LIMIT'] = st.slider(
-            "Emissions Increase Limit (%)", -20.0, 20.0, float(config.EMISSIONS_INCREASE_LIMIT*100), 0.1) / 100
+            "Emissions Increase Limit (%)", 0.0, 20.0, float(config.EMISSIONS_INCREASE_LIMIT*100), 0.1) / 100
         params['MIN_SOURCES_USED'] = st.number_input(
             "Minimum Sources Used", min_value=1, max_value=10, value=config.MIN_SOURCES_USED)
         params['TOTAL_CAPACITY_PENALTY'] = st.number_input(
