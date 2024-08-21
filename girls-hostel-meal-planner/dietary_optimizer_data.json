@@ -1,0 +1,288 @@
+{
+    "food_items": {
+      "rice": {
+        "cost": 50,
+        "protein": 0.07,
+        "carbs": 0.78,
+        "shelf_life_days": 360,
+        "volume_per_kg": 0.001
+      },
+      "wheat_flour": {
+        "cost": 40,
+        "protein": 0.13,
+        "carbs": 0.71,
+        "shelf_life_days": 180,
+        "volume_per_kg": 0.0015
+      },
+      "lentils": {
+        "cost": 100,
+        "protein": 0.25,
+        "carbs": 0.6,
+        "shelf_life_days": 360,
+        "volume_per_kg": 0.0012
+      },
+      "chickpeas": {
+        "cost": 90,
+        "protein": 0.20,
+        "carbs": 0.61,
+        "shelf_life_days": 360,
+        "volume_per_kg": 0.0012
+      },
+      "potatoes": {
+        "cost": 30,
+        "protein": 0.02,
+        "carbs": 0.17,
+        "shelf_life_days": 30,
+        "volume_per_kg": 0.001
+      },
+      "onions": {
+        "cost": 25,
+        "protein": 0.01,
+        "carbs": 0.09,
+        "shelf_life_days": 30,
+        "volume_per_kg": 0.001
+      },
+      "tomatoes": {
+        "cost": 40,
+        "protein": 0.01,
+        "carbs": 0.04,
+        "shelf_life_days": 7,
+        "volume_per_kg": 0.001
+      },
+      "spinach": {
+        "cost": 50,
+        "protein": 0.03,
+        "carbs": 0.04,
+        "shelf_life_days": 5,
+        "volume_per_kg": 0.002
+      },
+      "chicken": {
+        "cost": 200,
+        "protein": 0.31,
+        "carbs": 0,
+        "shelf_life_days": 2,
+        "volume_per_kg": 0.001
+      },
+      "eggs": {
+        "cost": 80,
+        "protein": 0.13,
+        "carbs": 0.01,
+        "shelf_life_days": 30,
+        "volume_per_kg": 0.0009
+      },
+      "milk": {
+        "cost": 60,
+        "protein": 0.03,
+        "carbs": 0.05,
+        "shelf_life_days": 7,
+        "volume_per_kg": 0.001
+      },
+      "yogurt": {
+        "cost": 70,
+        "protein": 0.04,
+        "carbs": 0.04,
+        "shelf_life_days": 14,
+        "volume_per_kg": 0.001
+      },
+      "banana": {
+        "cost": 45,
+        "protein": 0.01,
+        "carbs": 0.23,
+        "shelf_life_days": 5,
+        "volume_per_kg": 0.0016
+      },
+      "apple": {
+        "cost": 80,
+        "protein": 0.003,
+        "carbs": 0.14,
+        "shelf_life_days": 30,
+        "volume_per_kg": 0.0012
+      },
+      "cooking_oil": {
+        "cost": 100,
+        "protein": 0,
+        "carbs": 0,
+        "shelf_life_days": 360,
+        "volume_per_kg": 0.001
+      }
+    },
+    "diet_types": {
+      "vegetarian": {
+        "num_people": 500,
+        "daily_consumption": {
+          "rice": 0.2,
+          "wheat_flour": 0.1,
+          "lentils": 0.05,
+          "chickpeas": 0.05,
+          "potatoes": 0.1,
+          "onions": 0.05,
+          "tomatoes": 0.1,
+          "spinach": 0.1,
+          "milk": 0.2,
+          "yogurt": 0.1,
+          "banana": 0.1,
+          "apple": 0.1,
+          "cooking_oil": 0.02
+        }
+      },
+      "vegan": {
+        "num_people": 200,
+        "daily_consumption": {
+          "rice": 0.25,
+          "wheat_flour": 0.15,
+          "lentils": 0.08,
+          "chickpeas": 0.08,
+          "potatoes": 0.15,
+          "onions": 0.08,
+          "tomatoes": 0.15,
+          "spinach": 0.15,
+          "banana": 0.15,
+          "apple": 0.15,
+          "cooking_oil": 0.03
+        }
+      },
+      "non_vegetarian": {
+        "num_people": 300,
+        "daily_consumption": {
+          "rice": 0.15,
+          "wheat_flour": 0.1,
+          "lentils": 0.03,
+          "chickpeas": 0.03,
+          "potatoes": 0.08,
+          "onions": 0.05,
+          "tomatoes": 0.08,
+          "spinach": 0.08,
+          "chicken": 0.15,
+          "eggs": 0.08,
+          "milk": 0.15,
+          "yogurt": 0.1,
+          "banana": 0.08,
+          "apple": 0.08,
+          "cooking_oil": 0.025
+        }
+      },
+      "low_carb": {
+        "num_people": 100,
+        "daily_consumption": {
+          "rice": 0.05,
+          "lentils": 0.08,
+          "chickpeas": 0.08,
+          "potatoes": 0.05,
+          "onions": 0.08,
+          "tomatoes": 0.15,
+          "spinach": 0.2,
+          "chicken": 0.2,
+          "eggs": 0.15,
+          "milk": 0.1,
+          "yogurt": 0.15,
+          "apple": 0.1,
+          "cooking_oil": 0.03
+        }
+      }
+    },
+    "nutritional_info": {
+      "min_protein": {
+        "vegetarian": 60,
+        "vegan": 70,
+        "non_vegetarian": 80,
+        "low_carb": 100
+      },
+      "max_carbs": {
+        "vegetarian": 300,
+        "vegan": 350,
+        "non_vegetarian": 250,
+        "low_carb": 100
+      }
+    },
+    "inventory_info": {
+      "min_threshold": {
+        "rice": 500,
+        "wheat_flour": 300,
+        "lentils": 200,
+        "chickpeas": 200,
+        "potatoes": 300,
+        "onions": 200,
+        "tomatoes": 200,
+        "spinach": 100,
+        "chicken": 200,
+        "eggs": 100,
+        "milk": 300,
+        "yogurt": 200,
+        "banana": 200,
+        "apple": 200,
+        "cooking_oil": 100
+      },
+      "max_threshold": {
+        "rice": 5000,
+        "wheat_flour": 3000,
+        "lentils": 2000,
+        "chickpeas": 2000,
+        "potatoes": 1500,
+        "onions": 1000,
+        "tomatoes": 800,
+        "spinach": 500,
+        "chicken": 1000,
+        "eggs": 800,
+        "milk": 1500,
+        "yogurt": 1000,
+        "banana": 800,
+        "apple": 1000,
+        "cooking_oil": 1000
+      },
+      "prior_inventory": {
+        "rice": 1000,
+        "wheat_flour": 800,
+        "lentils": 400,
+        "chickpeas": 400,
+        "potatoes": 500,
+        "onions": 300,
+        "tomatoes": 300,
+        "spinach": 200,
+        "chicken": 300,
+        "eggs": 200,
+        "milk": 500,
+        "yogurt": 300,
+        "banana": 300,
+        "apple": 300,
+        "cooking_oil": 200
+      },
+      "storage_capacity": 25000
+    },
+    "logistic_info": {
+      "vehicle_capacity": 5000,
+      "transport_cost": 2000,
+      "min_days_between_purchases": 3,
+      "max_deliveries_per_week": 4,
+      "market_distance_km": 50
+    },
+    "planning_info": {
+      "horizon_days": 30,
+      "start_date": "2024-08-21"
+    },
+    "cost_factors": {
+      "storage_cost_per_kg_per_day": 0.05,
+      "wastage_cost_multiplier": 1.5,
+      "bulk_purchase_discount_threshold": 1000,
+      "bulk_purchase_discount_percentage": 0.1
+    },
+    "sustainability_metrics": {
+      "co2_emissions_per_km": 0.5,
+      "water_usage_per_kg": {
+        "rice": 2500,
+        "wheat_flour": 1300,
+        "lentils": 5000,
+        "chickpeas": 4000,
+        "potatoes": 250,
+        "onions": 200,
+        "tomatoes": 180,
+        "spinach": 300,
+        "chicken": 4300,
+        "eggs": 3300,
+        "milk": 1000,
+        "yogurt": 1000,
+        "banana": 790,
+        "apple": 700,
+        "cooking_oil": 3800
+      }
+    }
+  }
