@@ -135,6 +135,8 @@ def solve_model(model, X, Y, Z, S, num_orders, num_trucks, num_solutions=1):
     solver = cp_model.CpSolver()
     solutions = []
 
+    solver.parameters.max_time_in_seconds = 20
+
     class VarArraySolutionPrinter(cp_model.CpSolverSolutionCallback):
         def __init__(self, X, Y, Z, S, num_orders, num_trucks, solutions, num_solutions):
             cp_model.CpSolverSolutionCallback.__init__(self)
