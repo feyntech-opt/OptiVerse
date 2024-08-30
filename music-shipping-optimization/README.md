@@ -64,7 +64,7 @@ We're committed to continuous improvement. Planned features include:
 
 ## 📧 Get in Touch
 
-For any questions, suggestions, or contributions, feel free to reach out at [your-email@example.com]. We welcome your feedback!
+For any questions, suggestions, or contributions, feel free to reach out at [atul@feyntech.in]. We welcome your feedback!
 
 ---
 
