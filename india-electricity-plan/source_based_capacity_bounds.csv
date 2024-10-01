@@ -1,0 +1,12 @@
+Source,Type,Min Capacity (GW),Max Capacity (GW)
+Coal,Fossil Fuel,200,250
+Natural Gas,Fossil Fuel,20,30
+Nuclear,Nuclear,15,30
+Solar,Renewable,250,400
+Wind,Renewable,100,200
+Hydropower,Renewable,50,75
+Biomass,Renewable,10,20
+Diesel,Fossil Fuel,0,5
+Lignite,Fossil Fuel,0,10
+Small Hydro,Renewable,5,10
+Waste to Energy,Renewable,2,5

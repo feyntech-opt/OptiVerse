@@ -1,0 +1,8 @@
+\ Model Advanced_Dietary_Supply_Chain_Optimizer_copy
+\ LP format - for model browsing. Use MPS format to capture full model detail.
+Minimize
+ 
+Subject To
+ ProteinRequirement_vegetarian_0: >= 26.35
+Bounds
+End
