@@ -40,7 +40,7 @@ log_message("Starting script execution")
 with open('data/amul_data.json', 'r') as f:
     data = json.load(f)
 
-arcs = pd.read_csv('data/arcs_new.csv')
+arcs = pd.read_csv('data/arcs.csv')
 units = pd.read_csv('data/units.csv')
 
 validate_data(arcs, "arcs")
