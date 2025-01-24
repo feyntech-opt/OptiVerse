@@ -28,3 +28,4 @@ tenacity==8.4.1
 urllib3==2.2.2
 zipp==3.19.2
 plotly==5.24.1
+gurobipy
